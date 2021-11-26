@@ -5,24 +5,6 @@
       "email": "wfm@mail.ru",
       "password": "12345678",
       "name": "Администратор"
-    },
-    {
-      "email": "email@mail.ru",
-      "password": "qwerty",
-      "name": "Oleg",
-      "id": 2
-    },
-    {
-      "email": "test@mail.ru",
-      "password": "asdfghj",
-      "name": "Test",
-      "id": 3
-    },
-    {
-      "email": "test1@mail.ru",
-      "password": "gfdsah",
-      "name": "Vasia",
-      "id": 4
     }
   ],
   "bill": {
