@@ -1,4 +1,3 @@
-
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { User } from "../models/user.model";
@@ -13,8 +12,11 @@ export class UsersService extends BaseApi {
     }
 
 
-    getUserByEmail(email: string): Observable<User> {
-        return this.get(`users?email=${email}`);
+    getUserByEmail(email: string): Observable<any> {
+        return this.get(`users?email=${email}`)
+            .pipe(
+                map((users: User[]) => users[0] ? users[0] : undefined)
+            );
     }
 
     createNewUser(user: User): Observable<User> {
