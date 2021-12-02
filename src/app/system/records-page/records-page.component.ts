@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from '../shared/models/category.model';
 
 @Component({
-  selector: 'wfm-records-page',
-  templateUrl: './records-page.component.html',
-  styleUrls: ['./records-page.component.scss']
+    selector: 'wfm-records-page',
+    templateUrl: './records-page.component.html',
+    styleUrls: ['./records-page.component.scss']
 })
 export class RecordsPageComponent implements OnInit {
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
+    newCategoryAdded(category: Category) { }
 }
