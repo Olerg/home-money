@@ -11,7 +11,7 @@ import { CategoriesService } from '../../shared/services/categories.service';
 export class AddCategoryComponent{
     
     
-    @Output() newCategory = new EventEmitter<Category>();
+    @Output() onCategoryAdd = new EventEmitter<Category>();
     constructor(private categoriesService: CategoriesService) { }
 
 
@@ -25,7 +25,7 @@ export class AddCategoryComponent{
             .subscribe((category: Category) => {
                 form.reset();
                 form.form.patchValue({capacity: 1});
-                //this.onCategoryAdd.emit(category);
+                this.onCategoryAdd.emit(category);
             });
     }
 }

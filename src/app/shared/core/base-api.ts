@@ -21,6 +21,6 @@ export class BaseApi {
     }
 
     public put(url: string = '', data: any = {}): Observable<any> {
-        return this.http.get(this.getUrl(url), data).pipe(map(res => res));
+        return this.http.put(this.getUrl(url), data).pipe(map(res => res));
     }
 }
