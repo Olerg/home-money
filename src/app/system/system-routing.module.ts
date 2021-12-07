@@ -9,12 +9,13 @@ import { SystemComponent } from "./system.component";
 
 const routes: Routes = [
     {
-        path: 'system', component: SystemComponent, children: [
+        path: '', component: SystemComponent,
+        children: [
             { path: 'bill', component: BillPageComponent },
             { path: 'history', component: HistoryPageComponent },
             { path: 'planning', component: PlanningPageComponent },
             { path: 'records', component: RecordsPageComponent },
-             { path: 'history/:id', component: HistoryDetailComponent }
+            { path: 'history/:id', component: HistoryDetailComponent }
         ]
     }
 ];
