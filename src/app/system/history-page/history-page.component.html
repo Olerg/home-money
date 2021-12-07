@@ -8,7 +8,7 @@
         </button>
     </div>
 </div>
-<div *ngIf="!isLoaded" class="text-center">Loading ...</div>
+<div *ngIf="!isLoaded" class="text-center"><wfm-loader></wfm-loader></div>
 <div *ngIf="isLoaded">
     <wfm-history-chart [data]="chartData"></wfm-history-chart>
 
