@@ -29,6 +29,11 @@ export class LoginComponent implements OnInit {
             .subscribe((params: Params) => {
                 if (params['nowCanLogin']) {
                     this.showMessage({ text: 'Теперь вы можете зайти в систему', type: 'success' });
+                } else if (params['accessDenied']) {
+                    this.showMessage({
+                        text: 'Для работы с системой вам необходимо войти',
+                        type: 'warning'
+                    });
                 }
             });
 
@@ -56,7 +61,7 @@ export class LoginComponent implements OnInit {
                         this.message.text = '';
                         window.localStorage.setItem('user', JSON.stringify(user));
                         this.authService.login();
-                        this.router.navigate(['/system','bill']);
+                        this.router.navigate(['/system', 'bill']);
                     } else {
                         this.showMessage({ text: 'Пароль не верный', type: 'danger' });
                     }
