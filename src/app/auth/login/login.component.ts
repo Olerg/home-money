@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { fadeStateTrigger } from 'src/app/shared/animations/fade.animations';
 import { Message } from 'src/app/shared/models/message.model';
@@ -22,8 +23,17 @@ export class LoginComponent implements OnInit {
         private usersService: UsersService,
         private authService: AuthService,
         private router: Router,
-        private route: ActivatedRoute
-    ) { }
+        private route: ActivatedRoute,
+        private title: Title,
+        private meta: Meta
+
+    ) {
+        title.setTitle('Вход в систему');
+        meta.addTags([
+            { name: 'keywords', content: 'логин, вход, система' },
+            {name: 'description', content: 'Страница для входа в систему'}
+        ]);
+    }
 
     ngOnInit(): void {
         this.message = new Message('danger', '');
