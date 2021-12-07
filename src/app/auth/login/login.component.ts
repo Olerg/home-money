@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { fadeStateTrigger } from 'src/app/shared/animations/fade.animations';
 import { Message } from 'src/app/shared/models/message.model';
 import { User } from 'src/app/shared/models/user.model';
 import { AuthService } from 'src/app/shared/services/auth.service';
@@ -9,7 +10,8 @@ import { UsersService } from 'src/app/shared/services/users.service';
 @Component({
     selector: 'wfm-login',
     templateUrl: './login.component.html',
-    styleUrls: ['./login.component.scss']
+    styleUrls: ['./login.component.scss'],
+    animations: [fadeStateTrigger]
 })
 export class LoginComponent implements OnInit {
 
